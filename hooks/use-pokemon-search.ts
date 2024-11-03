@@ -4,11 +4,13 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import { useDebounce } from "usehooks-ts";
 
 interface Pokemon {
+  types: any;
   name: string;
   url: string;
 }
 
 interface PokemonResponse {
+  types: any;
   count: number;
   next: string | null;
   previous: string | null;

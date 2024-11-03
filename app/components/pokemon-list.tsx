@@ -96,7 +96,7 @@ export default function PokemonList() {
   
   // Filter by active types if any are selected
   const filteredPokemon = activeTypes.length > 0
-    ? pokemon.filter(p => p.types.some(type => activeTypes.includes(type)))
+    ? pokemon.filter(p => p?.types?.some((type: string) => activeTypes.includes(type)))
     : pokemon;
 
   if (filteredPokemon.length === 0) {
