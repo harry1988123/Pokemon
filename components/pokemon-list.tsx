@@ -4,8 +4,9 @@ import styled from 'styled-components';
 import { useSearchParams } from "next/navigation";
 import PokemonCard from "./pokemon-card";
 import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { usePokemonSearch } from "@/hooks/use-pokemon-search";
+import React from 'react';
 
 const Grid = styled.div`
   display: grid;
@@ -103,11 +104,13 @@ export default function PokemonList() {
   }
 
   return (
+    <Suspense>
     <Grid>
       {pokemon.map((p, index) => (
         <PokemonCard key={p.name + index} name={p.name} url={p.url} />
       ))}
       <div ref={ref} style={{ height: '2.5rem' }} />
     </Grid>
+    </Suspense>
   );
 }

@@ -3,6 +3,7 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useRef, useTransition } from "react";
 import { Search } from "lucide-react";
+import React from "react";
 
 export default function SearchBar() {
   const router = useRouter();

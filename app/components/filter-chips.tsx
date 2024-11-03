@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { useCallback } from "react";
+import { Suspense, useCallback } from "react";
 import { X } from "lucide-react";
 import { typeColors } from "@/lib/constants";
 
@@ -35,6 +35,7 @@ export default function FilterChips() {
   );
 
   return (
+    <Suspense>
     <div className="w-full max-w-3xl mx-auto mt-4">
       <div className="flex flex-wrap gap-2">
         {pokemonTypes.map((type) => {
@@ -63,5 +64,6 @@ export default function FilterChips() {
         })}
       </div>
     </div>
+    </Suspense>
   );
 }
